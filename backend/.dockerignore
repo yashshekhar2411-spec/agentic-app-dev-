@@ -1,0 +1,8 @@
+.venv/
+.env
+.env.*
+logs/
+tests/
+*.json
+public-url.txt
+__pycache__/

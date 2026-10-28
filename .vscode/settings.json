@@ -1,0 +1,18 @@
+{
+    "git.ignoreLimitWarning": true,
+    // Python never writes __pycache__ in this project's terminals
+    "terminal.integrated.env.windows": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    // ...and if one ever appears, VS Code hides it
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        // the backend's Python libraries: still there and used, just not shown
+        "backend/.venv": true
+    },
+    // The Gradle extension would start its own Gradle on frontend/android (a link to C:\agentic-build\android)
+    // and clash with APK builds run from the terminal: build only from C:\agentic-build\android
+    "gradle.autoDetect": "off",
+    "java.import.gradle.enabled": false
+}

@@ -1,0 +1,35 @@
+# Python
+backend/.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+
+# Node / Expo
+frontend/node_modules/
+frontend/.expo/
+frontend/android/
+frontend/ios/
+
+# AI agent settings changed from the app (machine-specific)
+backend/agent_settings.json
+# Data saved by the server: contacts, scheduled calls, role permissions
+backend/contacts.json
+backend/scheduled_calls.json
+backend/roles.json
+backend/humans.json
+backend/invites.json
+backend/rbac_audit.json
+
+# Secrets: commit only .env.example
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+
+# Ruby gems installed by `bundle install` (frontend/.bundle/config puts them here)
+frontend/vendor/bundle/
+# Written by scripts/start-server.ps1
+backend/logs/
+backend/public-url.txt

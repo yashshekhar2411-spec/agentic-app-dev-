@@ -1,0 +1,37 @@
+[project]
+name = "agentic-call-backend"
+version = "1.0.0"
+description = "AI voice agent that answers calls first and hands off to humans"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "anthropic>=1.14",
+    "twilio>=9.0",
+    "pydantic>=2.8",
+    "pydantic-settings>=2.4",
+    "httpx>=0.27",
+    "pyjwt[crypto]>=2.8",
+    "python-multipart>=0.0.9",
+    "asyncpg>=0.30",
+    "redis>=5.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.24",
+    "fakeredis[lua]>=2.26",  # in-process Redis for tests
+]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+addopts = "-p no:cacheprovider"  # no .pytest_cache folder
+testpaths = ["tests"]
